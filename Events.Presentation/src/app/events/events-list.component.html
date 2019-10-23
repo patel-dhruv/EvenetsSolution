@@ -1,0 +1,13 @@
+<app-loader [show]="show"></app-loader>
+<mat-card *ngIf='!show'>current events</mat-card>
+<mat-card *ngIf='!show'>
+  <mat-card-content>
+    <mat-nav-list *ngFor="let event of Events">
+      <a mat-list-item [routerLink]="['/events',event.id ]">
+        <span mat-line>{{event.title}}</span>
+        <span mat-line> {{event.date | date}}</span>        
+      </a>
+      <mat-divider></mat-divider>
+    </mat-nav-list>
+  </mat-card-content>
+</mat-card>
